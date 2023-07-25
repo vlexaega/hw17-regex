@@ -39,7 +39,15 @@ Quantifiers specific how many times a character or group of characters should oc
     '{n,}': Matches at least n occurrences.
     '{n,m}': Matches between n and m occurrences.
 
+Example:
+/\d+/ matches one or more digits
+/[a-z]{2,4}/ matches lowercase letters with a length between 2 and 4
+
 ### OR Operator
+The OR Operator which is normally identified by '|' allows one to specify alternative patterns.  It matches either the pattern on the left or the pattern on the right. 
+
+Example"
+/apple|orange/ matches either "apple" or "orange"
 
 ### Character Classes
 
