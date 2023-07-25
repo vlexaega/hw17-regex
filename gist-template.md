@@ -46,25 +46,71 @@ Example:
 ### OR Operator
 The OR Operator which is normally identified by '|' allows one to specify alternative patterns.  It matches either the pattern on the left or the pattern on the right. 
 
-Example"
+Example:
 /apple|orange/ matches either "apple" or "orange"
 
 ### Character Classes
+Character classes let you define a set of characters that can match a specific position in the text. 
 
+    '\d': Matches any digit (0-9).
+    '\w': Matches any word character (alphanumeric and underscore).
+    '\s': Matches any whitespace character.
+    '.': Matches any character except a newline.
+
+Example:
+/\d{3}-\d{2}-\d{4} matches a number such as "123-45-6789"
+/\w+/ matches one or more word characters 
 ### Flags
+Flags are optional modifiers.  They can be added at the end of a regex pattern to change the matching behavior. 
 
+    'i': Case-insensitive matching.
+    'g': Global matching (find all matches, not just the first).
+    'm': Multi-line matching.
+
+Example:
+/cat/i matches "cat", "Cat", "CAT", etc., in a case-sensitive manner.
 ### Grouping and Capturing
+Parenthese '()' are used for grouping parts of a pattern together. They also capture the matched substring for later use. 
+
+Example:
+/(ab)+/ matches one or more occurrences of "ab" together
 
 ### Bracket Expressions
+These define a character class inside square brackets '[]' and will match any single character that appears within the brackets. 
+
+Example:
+/[aeiou]/ matches any vowel 
+/[0-9]/ matches any digit 
 
 ### Greedy and Lazy Match
+Regex by default is greedy. This means it matches as much text as possible. You can use quantifiers such as '?' to make it lazy, which means it is matching as little as possible. 
 
+Example:
+/<.+>/ this is a Greedy Match. Matches "<html>content</html>" as a single match.
+/<.+?>/ this is a Lazy Match.  Matches "<html>" and "</html>" as separate matches.
 ### Boundaries
+Boundaries are used to specify positions in the text where matches should occur. Common boundaries are:
+    '\b': Matches a word boundary.
+    '\B': Matches a non-word boundary.
 
+Example:
+/\bapple\b/ matches "apple" as a whole word but not "pineapple"
 ### Back-references
+Back-references allow you to match the same text that was previously matched by a capturing group. 
+
+Example:
+/(\d{2})-\1/ matches "11-11", "22-22", etc. but will not match "11-22"
 
 ### Look-ahead and Look-behind
+Look-ahead and look-behind assertions allow you to check if a pattern is followed or preceded by another pattern without including it in the match. 
+
+Example:
+/\d+(?= dollars)/ Matches numbers followed by " dollars" without including " dollars".
+/(?<=\$)\d+/ Matches numbers preceded by "$" without including "$".
+
 
 ## Author
 
-A short section about the author with a link to the author's GitHub profile (replace with your information and a link to your profile)
+This tutorial was written by Alexander Vega, a current student of Columbia University Full Stack Engineering Bootcamp cohort May 2023 - August 2023. 
+Check out my work and my GitHub below:
+https://github.com/vlexaega 
